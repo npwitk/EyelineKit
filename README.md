@@ -17,7 +17,7 @@ EyelineKit finds where the camera actually is and puts the instruction there.
   - Outer display: a tall capsule hangs from the lens in the vertical bar.
   - Inner display: a wide "drop" hangs under the under-display camera, like the Dynamic Island expanding.
   - Inside the capsule, a Face ID-style glyph acts out the move above a word or two. The outline fills with progress, step dots (or a "2/11" counter) show where you are, and it turns amber when something's wrong ("No face found").
-- **Pulls the eyes back to the lens.** A Metal shader sends soft rings out from the camera, with a stronger wave each time the instruction changes. With Reduce Motion it's a still glow.
+- **Pulls the eyes back to the lens.** A Metal shader sends soft rings out from the camera. On each new instruction, the screen bends with a refraction pulse from the lens, like the one iOS plays when the under-display camera turns on. With Reduce Motion it's a still glow and no pulse.
 - **Works without reading.** Each instruction is spoken (English and Thai), steps play haptics, and VoiceOver announces changes.
 - **Can require the outer display.** The inner camera is a 4 MP under-display camera. With `supports: .outerDisplayOnly`, the inner display shows "Close your iPhone to continue" with a to-scale folding animation, and the check pauses until the phone is closed. Displays that don't fold (other iPhones, iPad) are unaffected.
 
@@ -105,6 +105,7 @@ style.capsule.fill = .mint              // capsule colour
 style.capsule.ink = .black              // glyph and text
 style.capsule.warningFill = .orange
 style.capsule.showsRipple = false
+style.capsule.pulsesFromLens = false     // the refraction pulse on each new instruction
 style.hidesStatusBarForLensCapsule = false
 style.previewDiameter = 120
 

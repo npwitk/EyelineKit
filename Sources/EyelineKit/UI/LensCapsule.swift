@@ -7,6 +7,9 @@ public struct LensCapsuleStyle: Sendable {
     public var warningFill = Color(red: 1.0, green: 0.84, blue: 0.56)
     public var ink = Color(red: 0.10, green: 0.14, blue: 0.08)
     public var showsRipple = true
+    /// A refraction wave from the lens at the start and at every new instruction, like the
+    /// pulse iOS plays around the under-display camera.
+    public var pulsesFromLens = true
 
     public init() {}
 }

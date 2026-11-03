@@ -116,6 +116,13 @@ public struct EyelineLayout<Preview: View, Footer: View>: View {
                         .transition(.opacity)
                 }
             }
+            .modifier(LensPulse(
+                origin: anchor.cameraCenter,
+                trigger: AnyHashable([session.challenge?.rawValue ?? "", "\(session.stepIndex)"]),
+                // iOS already plays this pulse when the under-display camera turns on.
+                skipsFirst: anchor.isOnFoldingDisplay,
+                isEnabled: style.capsule.pulsesFromLens && session.phase == .running
+            ))
             // Only the side-bar capsule shares space with the status bar.
             .statusBarHidden(capsule?.kind == .vertical && style.hidesStatusBarForLensCapsule)
             .animation(.smooth, value: session.phase)
