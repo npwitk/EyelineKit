@@ -8,6 +8,7 @@ struct LensPulse: ViewModifier {
     var trigger: AnyHashable
     /// Skip the pulse for the first trigger (iOS already plays one when the inner camera starts).
     var skipsFirst: Bool
+    var strength: CGFloat
     var isEnabled: Bool
 
     static let duration: TimeInterval = 1.1
@@ -25,9 +26,9 @@ struct LensPulse: ViewModifier {
                     .float(Float(elapsed)),
                     .float(420),   // points per second
                     .float(34),    // wave width
-                    .float(14)     // peak displacement
+                    .float(Float(strength))
                 ),
-                maxSampleOffset: CGSize(width: 16, height: 16),
+                maxSampleOffset: CGSize(width: strength + 2, height: strength + 2),
                 isEnabled: isEnabled && start != nil && elapsed < Self.duration && !reduceMotion
             )
         }

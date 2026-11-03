@@ -24,6 +24,9 @@ public final class EyelineSession {
     /// Increments each time a step passes, for haptics and animations.
     public private(set) var completedSteps = 0
 
+    /// Increments each time the layout should pulse from the lens to pull the eyes back.
+    public private(set) var attentionRequests = 0
+
     /// `false` while the layout shows "close your iPhone" because the check is set to the outer
     /// display only. Engines should pause; `ChallengeRunner` does this for you.
     public private(set) var isDisplaySupported = true
@@ -72,6 +75,14 @@ public final class EyelineSession {
         guard feedback != self.feedback else { return }
         self.feedback = feedback
         if let feedback { cues.feedbackChanged(to: feedback) }
+        // Eyes have drifted from the lens: pulse from it.
+        if feedback == .lookAtCamera { drawAttentionToLens() }
+    }
+
+    /// Plays the refraction pulse from the lens now. The layout also plays it on every new
+    /// instruction and when the feedback becomes `.lookAtCamera`.
+    public func drawAttentionToLens() {
+        attentionRequests += 1
     }
 
     /// Marks the current step done. The engine then calls `setChallenge` for the next one, or `finish`.

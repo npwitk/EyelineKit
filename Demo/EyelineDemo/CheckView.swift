@@ -14,6 +14,8 @@ struct CheckView: View {
     @AppStorage("debug") private var showsDebug = false
     @AppStorage("speech") private var speech = true
     @AppStorage("innerDisplay") private var innerDisplay = "supported"
+    @AppStorage("lensPulse") private var lensPulse = true
+    @AppStorage("pulseStrength") private var pulseStrength = 14.0
     @Environment(\.horizontalSizeClass) private var horizontal
     @Environment(\.verticalSizeClass) private var vertical
 
@@ -28,10 +30,17 @@ struct CheckView: View {
         _runner = State(initialValue: ChallengeRunner(session: session, configuration: configuration))
     }
 
+    private var style: EyelineStyle {
+        var style = EyelineStyle()
+        style.capsule.pulsesFromLens = lensPulse
+        style.capsule.pulseStrength = pulseStrength
+        return style
+    }
+
     private var display: FacingDisplay { FacingDisplay(horizontal: horizontal, vertical: vertical) }
 
     var body: some View {
-        EyelineLayout(session: session, supports: innerDisplay == "outerOnly" ? .outerDisplayOnly : .allDisplays) {
+        EyelineLayout(session: session, style: style, supports: innerDisplay == "outerOnly" ? .outerDisplayOnly : .allDisplays) {
             preview
         } footer: {
             controls
@@ -106,6 +115,18 @@ struct CheckView: View {
                     Picker("Inner display", selection: $innerDisplay) {
                         Text("Supported").tag("supported")
                         Text("Ask to close iPhone").tag("outerOnly")
+                    }
+                    Section("Lens pulse") {
+                        Button("Pulse now", systemImage: "dot.radiowaves.left.and.right") {
+                            session.drawAttentionToLens()
+                        }
+                        .disabled(!lensPulse || session.phase != .running)
+                        Toggle("On", isOn: $lensPulse)
+                        Picker("Strength", selection: $pulseStrength) {
+                            Text("Subtle").tag(8.0)
+                            Text("Medium").tag(14.0)
+                            Text("Strong").tag(22.0)
+                        }
                     }
                     Toggle("Spoken prompts", isOn: $speech)
                     Toggle("Face readout", isOn: $showsDebug)

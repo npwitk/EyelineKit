@@ -10,6 +10,8 @@ public struct LensCapsuleStyle: Sendable {
     /// A refraction wave from the lens at the start and at every new instruction, like the
     /// pulse iOS plays around the under-display camera.
     public var pulsesFromLens = true
+    /// How far the pulse bends the content at its peak, in points.
+    public var pulseStrength: CGFloat = 14
 
     public init() {}
 }
@@ -179,8 +181,8 @@ private struct StepPips: View {
 
 /// The ripple field: rings from the lens across the whole screen, drawn with a Metal shader.
 struct LensRippleField: View {
+    /// The lens centre in this view's coordinates; the view fills the frame it's given.
     var lensCenter: CGPoint
-    var screenRect: CGRect
     var tint: Color
     /// Changes whenever the instruction changes, to send a brighter wave.
     var trigger: AnyHashable
@@ -189,26 +191,25 @@ struct LensRippleField: View {
     @State private var burstStart = Date.distantPast
 
     var body: some View {
+        GeometryReader { proxy in
         TimelineView(.animation(paused: reduceMotion)) { context in
             let now = context.date
             let time = Float(now.timeIntervalSinceReferenceDate.truncatingRemainder(dividingBy: 3600))
             let burst = Float(exp(-max(0, now.timeIntervalSince(burstStart)) * 1.8))
-            let center = CGPoint(x: lensCenter.x - screenRect.minX, y: lensCenter.y - screenRect.minY)
             Rectangle()
                 .fill(.black)
                 .colorEffect(
                     ShaderLibrary.bundle(.module).eyelineLensRipple(
-                        .float2(center),
+                        .float2(lensCenter),
                         .float(time),
                         .color(tint),
-                        .float(Float(max(screenRect.width, screenRect.height) * 0.75)),
+                        .float(Float(max(proxy.size.width, proxy.size.height) * 0.75)),
                         .float(reduceMotion ? 0 : burst),
                         .float(reduceMotion ? 0 : 1)
                     )
                 )
         }
-        .frame(width: screenRect.width, height: screenRect.height)
-        .offset(x: screenRect.minX, y: screenRect.minY)
+        }
         .allowsHitTesting(false)
         .accessibilityHidden(true)
         .onChange(of: trigger, initial: true) { burstStart = .now }

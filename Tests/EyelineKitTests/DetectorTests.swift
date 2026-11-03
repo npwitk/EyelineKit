@@ -101,3 +101,19 @@ struct DisplaySupportTests {
         #expect(session.challenge == .blink)
     }
 }
+
+@MainActor
+struct AttentionTests {
+    @Test func lookAtCameraFeedbackAsksForAPulse() {
+        let session = EyelineSession(cues: EyelineCues(options: []))
+        #expect(session.attentionRequests == 0)
+        session.setFeedback(.lookAtCamera)
+        #expect(session.attentionRequests == 1)
+        session.setFeedback(.lookAtCamera)          // unchanged feedback: no extra pulse
+        #expect(session.attentionRequests == 1)
+        session.setFeedback(.noFace)
+        #expect(session.attentionRequests == 1)
+        session.drawAttentionToLens()
+        #expect(session.attentionRequests == 2)
+    }
+}

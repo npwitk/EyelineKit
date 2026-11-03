@@ -98,35 +98,45 @@ public struct EyelineLayout<Preview: View, Footer: View>: View {
                     .padding()
                     .padding(clearance)
             }
-            .background(alignment: .topLeading) {
-                if style.capsule.showsRipple, let screenRect = anchor.screenRect, session.phase == .running {
-                    LensRippleField(
-                        lensCenter: anchor.cameraCenter,
-                        screenRect: screenRect,
-                        tint: style.capsule.fill,
-                        trigger: AnyHashable([session.challenge?.rawValue ?? "", "\(session.stepIndex)"])
-                    )
-                    .transition(.opacity)
-                }
-            }
-            .overlay(alignment: .topLeading) {
-                if let capsule {
-                    LensCapsule(session: session, geometry: capsule, style: style.capsule)
-                        .offset(x: capsule.frame.minX, y: capsule.frame.minY)
-                        .transition(.opacity)
-                }
-            }
-            .modifier(LensPulse(
-                origin: anchor.cameraCenter,
-                trigger: AnyHashable([session.challenge?.rawValue ?? "", "\(session.stepIndex)"]),
-                // iOS already plays this pulse when the under-display camera turns on.
-                skipsFirst: anchor.isOnFoldingDisplay,
-                isEnabled: style.capsule.pulsesFromLens && session.phase == .running
-            ))
+            // Behind the content: the capsule hangs where nothing else is laid out, and keeping it
+            // with the rings lets the lens pulse bend both. The pulse can't touch the camera
+            // preview or the glass buttons (UIKit-backed views can't be redrawn by a layer
+            // effect), so it is applied to this pure-SwiftUI layer only.
+            .background(alignment: .topLeading) { lensDecoration(anchor, capsule: capsule) }
             // Only the side-bar capsule shares space with the status bar.
             .statusBarHidden(capsule?.kind == .vertical && style.hidesStatusBarForLensCapsule)
             .animation(.smooth, value: session.phase)
             .animation(.smooth, value: anchor)
+    }
+
+    /// The rings and the capsule on one full-screen layer, bent together by the lens pulse.
+    @ViewBuilder
+    private func lensDecoration(_ anchor: CameraAnchor, capsule: LensCapsuleGeometry?) -> some View {
+        if let screen = anchor.screenRect {
+            let lens = CGPoint(x: anchor.cameraCenter.x - screen.minX, y: anchor.cameraCenter.y - screen.minY)
+            let step = AnyHashable([session.challenge?.rawValue ?? "", "\(session.stepIndex)"])
+            ZStack(alignment: .topLeading) {
+                if style.capsule.showsRipple, session.phase == .running {
+                    LensRippleField(lensCenter: lens, tint: style.capsule.fill, trigger: step)
+                        .transition(.opacity)
+                }
+                if let capsule {
+                    LensCapsule(session: session, geometry: capsule, style: style.capsule)
+                        .offset(x: capsule.frame.minX - screen.minX, y: capsule.frame.minY - screen.minY)
+                        .transition(.opacity)
+                }
+            }
+            .frame(width: screen.width, height: screen.height, alignment: .topLeading)
+            .modifier(LensPulse(
+                origin: lens,
+                trigger: AnyHashable([step, AnyHashable(session.attentionRequests)]),
+                // iOS already plays this pulse when the under-display camera turns on.
+                skipsFirst: anchor.isOnFoldingDisplay,
+                strength: style.capsule.pulseStrength,
+                isEnabled: style.capsule.pulsesFromLens && session.phase == .running
+            ))
+            .offset(x: screen.minX, y: screen.minY)
+        }
     }
 
     /// The anchor the preview is laid out against. Under a drop capsule the preview goes below
