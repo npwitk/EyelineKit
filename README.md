@@ -2,6 +2,10 @@
 
 Face-check instructions that sit **right under the camera**, so people can read them while looking at the lens.
 
+<p align="center">
+  <img src="docs/demo.gif" width="800" alt="A face check on iPhone Duo's outer display. The view zooms into the top-right corner, where a green capsule hangs from the front camera showing an animated face icon, the instruction, and the step count, next to a round camera preview.">
+</p>
+
 Banking and eKYC apps ask you to blink, turn left or move closer during a face check. Their screens assume a camera at the top centre: a big preview in the middle, the instruction below it. On iPhone Duo the outer display's camera sits in the top-right corner, inside the vertical bar. You either look at the lens and can't read the instruction, or read the instruction and look away from the lens, and the check fails.
 
 EyelineKit finds where the camera actually is and puts the instruction there.
