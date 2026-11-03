@@ -21,7 +21,9 @@ struct DetectorTests {
         var left = ChallengeDetector(challenge: .turnLeft)
         #expect(!SimulatedFace.samples(for: .turnRight).contains { left.update($0).passed })
         var up = ChallengeDetector(challenge: .lookUp)
-        #expect(!SimulatedFace.samples(for: .lookDown).contains { up.update($0).passed })
+        var down = SimulatedFace.neutral
+        down.pitch = -20
+        #expect(!Array(repeating: down, count: 6).contains { up.update($0).passed })
     }
 
     @Test func turnMustBeHeld() {

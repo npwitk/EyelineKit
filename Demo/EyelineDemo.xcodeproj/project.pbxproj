@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		1ED425B8D89DCDDB13560C86 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
-		39700F3E77F63C569EDCB783 /* EyelineDemo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EyelineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39700F3E77F63C569EDCB783 /* EyelineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyelineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46331A64AA99ED1B778ABB63 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		49BD8FE768BCC994D941E62E /* EyelineDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyelineDemoApp.swift; sourceTree = "<group>"; };
 		C78354557CA01D06012C80AC /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
@@ -104,8 +104,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 0AAF464BB123ADBBCF51200B /* Build configuration list for PBXProject "EyelineDemo" */;
 			developmentRegion = en;
@@ -212,6 +210,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5UTY23TYW4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Eyeline Demo";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Eyeline Demo uses the front camera to run a sample face check.";
@@ -290,6 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5UTY23TYW4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Eyeline Demo";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Eyeline Demo uses the front camera to run a sample face check.";

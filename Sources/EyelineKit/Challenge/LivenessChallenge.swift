@@ -11,7 +11,6 @@ public enum LivenessChallenge: String, Sendable, CaseIterable, Identifiable, Cod
     case turnLeft
     case turnRight
     case lookUp
-    case lookDown
     case shake
     case smile
     case openMouth
@@ -29,7 +28,6 @@ public enum LivenessChallenge: String, Sendable, CaseIterable, Identifiable, Cod
         case .turnLeft: String(localized: "challenge.turnLeft", defaultValue: "Turn left", bundle: .module)
         case .turnRight: String(localized: "challenge.turnRight", defaultValue: "Turn right", bundle: .module)
         case .lookUp: String(localized: "challenge.lookUp", defaultValue: "Look up", bundle: .module)
-        case .lookDown: String(localized: "challenge.lookDown", defaultValue: "Look down", bundle: .module)
         case .shake: String(localized: "challenge.shake", defaultValue: "Shake your head", bundle: .module)
         case .smile: String(localized: "challenge.smile", defaultValue: "Smile", bundle: .module)
         case .openMouth: String(localized: "challenge.openMouth", defaultValue: "Open your mouth", bundle: .module)
@@ -47,7 +45,6 @@ public enum LivenessChallenge: String, Sendable, CaseIterable, Identifiable, Cod
         case .turnLeft: String(localized: "spoken.turnLeft", defaultValue: "Slowly turn your head to the left.", bundle: .module)
         case .turnRight: String(localized: "spoken.turnRight", defaultValue: "Slowly turn your head to the right.", bundle: .module)
         case .lookUp: String(localized: "spoken.lookUp", defaultValue: "Tilt your head up.", bundle: .module)
-        case .lookDown: String(localized: "spoken.lookDown", defaultValue: "Tilt your head down.", bundle: .module)
         case .shake: String(localized: "spoken.shake", defaultValue: "Shake your head from side to side.", bundle: .module)
         case .smile: String(localized: "spoken.smile", defaultValue: "Please smile.", bundle: .module)
         case .openMouth: String(localized: "spoken.openMouth", defaultValue: "Open your mouth.", bundle: .module)
@@ -58,7 +55,7 @@ public enum LivenessChallenge: String, Sendable, CaseIterable, Identifiable, Cod
 
     /// The challenges a randomised check usually draws from (the calibration steps are excluded).
     public static let actions: [LivenessChallenge] = [
-        .blink, .turnLeft, .turnRight, .lookUp, .lookDown, .shake, .smile, .openMouth, .moveCloser, .moveAway,
+        .blink, .turnLeft, .turnRight, .lookUp, .shake, .smile, .openMouth, .moveCloser, .moveAway,
     ]
 }
 

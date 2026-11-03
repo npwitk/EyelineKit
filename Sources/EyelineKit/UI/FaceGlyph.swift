@@ -125,7 +125,6 @@ struct FaceGlyphPose: Equatable {
         case .turnLeft: yaw = -pulse
         case .turnRight: yaw = pulse
         case .lookUp: pitch = -pulse
-        case .lookDown: pitch = pulse
         case .shake: yaw = wave
         case .smile: smile = pulse
         case .openMouth: mouthOpen = pulse

@@ -104,23 +104,6 @@
         }
       }
     },
-    "challenge.lookDown": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Look down"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ก้มหน้า"
-          }
-        }
-      }
-    },
     "challenge.shake": {
       "extractionState": "manual",
       "localizations": {
@@ -304,23 +287,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "เงยหน้าขึ้น"
-          }
-        }
-      }
-    },
-    "spoken.lookDown": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tilt your head down."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ก้มหน้าลง"
           }
         }
       }

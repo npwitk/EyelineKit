@@ -38,8 +38,8 @@ struct CheckView: View {
         } onAnchorChange: { anchor = $0 }
         .overlay {
             if session.phase == .passed {
-                VerifiedCard(onContinue: onClose)
-                    .transition(.scale(scale: 0.9).combined(with: .opacity))
+                VerifiedView(onContinue: onClose)
+                    .transition(.opacity)
             }
         }
         .animation(.smooth, value: session.phase)
@@ -192,35 +192,31 @@ private struct DebugReadout: View {
 }
 
 /// Shown when every step passed.
-private struct VerifiedCard: View {
+private struct VerifiedView: View {
     var onContinue: () -> Void
 
     var body: some View {
         VStack(spacing: 16) {
-            Image(systemName: "checkmark.seal.fill")
-                .font(.system(size: 56))
+            Image(systemName: "checkmark.circle.fill")
+                .font(.system(size: 64))
                 .foregroundStyle(Duoland.green)
                 .symbolEffect(.bounce, options: .nonRepeating)
-            VStack(spacing: 6) {
-                Text("It's really you!")
-                    .font(.title2.bold())
-                Text("The vault guards are satisfied.")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
-            }
-            .multilineTextAlignment(.center)
+            Text("It's really you")
+                .font(.title2.bold())
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.background)
+        .safeAreaBar(edge: .bottom) {
             Button(action: onContinue) {
                 Text("Continue")
                     .font(.headline)
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: 520)
             }
             .buttonStyle(.glassProminent)
             .buttonBorderShape(.capsule)
             .controlSize(.large)
+            .padding(.horizontal, 24)
+            .padding(.bottom, 8)
         }
-        .padding(24)
-        .frame(maxWidth: 320)
-        .glassEffect(.regular, in: .rect(cornerRadius: 32, style: .continuous))
-        .padding(24)
     }
 }

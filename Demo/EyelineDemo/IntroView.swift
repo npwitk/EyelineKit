@@ -17,19 +17,19 @@ struct IntroView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Face check")
                         .font(.largeTitle.bold())
-                    Text("Show the vault guards it's really you.")
+                    Text("Takes about 30 seconds.")
                         .font(.title3)
                         .foregroundStyle(.secondary)
                 }
                 
                 VStack(alignment: .leading, spacing: 20) {
-                    Row(symbol: "sunglasses", text: "Take off your hat and sunglasses.")
-                    Row(symbol: "sun.max", text: "Find some light.")
-                    Row(symbol: "iphone.gen3", text: "Close your iPhone and use the outer screen.")
-                    Row(symbol: "eye", text: "Look at the camera. Instructions appear right beside it.")
+                    Row(symbol: "sunglasses", text: "Remove hat and sunglasses")
+                    Row(symbol: "sun.max", text: "Find good light")
+                    Row(symbol: "iphone.gen3", text: "Use the outer screen")
+                    Row(symbol: "eye", text: "Look at the camera")
                 }
                 
-                Text("Bank of Duoland is pretend. Your face never leaves this iPhone.")
+                Text("Bank of Duoland is a pretend bank.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }

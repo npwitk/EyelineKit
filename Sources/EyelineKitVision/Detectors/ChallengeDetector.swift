@@ -103,8 +103,6 @@ public struct ChallengeDetector: Sendable {
             return holdBeyond(baseline.yaw - sample.yaw, t.turnDegrees)
         case .lookUp:
             return holdBeyond(sample.pitch - baseline.pitch, t.tiltDegrees)
-        case .lookDown:
-            return holdBeyond(baseline.pitch - sample.pitch, t.tiltDegrees)
 
         case .shake:
             return oscillation(sample.yaw - baseline.yaw, t.shakeDegrees)

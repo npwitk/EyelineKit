@@ -27,8 +27,6 @@ public enum SimulatedFace {
             return hold(n, 1) + hold(with { $0.yaw = -30 })
         case .lookUp:
             return hold(n, 1) + hold(with { $0.pitch = 20 })
-        case .lookDown:
-            return hold(n, 1) + hold(with { $0.pitch = -20 })
         case .shake:
             return hold(with { $0.yaw = 20 }, 2) + hold(with { $0.yaw = -20 }, 2) + hold(n, 2)
         case .smile:

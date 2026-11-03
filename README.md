@@ -91,7 +91,7 @@ runner.start()   // "Center your face", then 2–3 random moves
 
 Call `camera.use(display:)` again whenever the size classes change. Opening or closing the phone moves the app between displays without changing `scenePhase`. `ChallengeRunner` pauses by itself on an unsupported display.
 
-Challenges: `blink`, `turnLeft`, `turnRight`, `lookUp`, `lookDown`, `shake`, `smile`, `openMouth`, `moveCloser`, `moveAway`, plus the calibration steps `centerFace` and `holdStill`. Change the pool, count and timeout through `ChallengeRunner.Configuration`, and the detection thresholds through `DetectorThresholds`.
+Challenges: `blink`, `turnLeft`, `turnRight`, `lookUp`, `shake`, `smile`, `openMouth`, `moveCloser`, `moveAway`, plus the calibration steps `centerFace` and `holdStill`. Change the pool, count and timeout through `ChallengeRunner.Configuration`, and the detection thresholds through `DetectorThresholds`.
 
 ### Styling
 
