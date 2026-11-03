@@ -1,0 +1,29 @@
+name: EyelineDemo
+options:
+  bundleIdPrefix: com.npwitk
+  deploymentTarget:
+    iOS: "26.0"
+packages:
+  EyelineKit:
+    path: ..
+targets:
+  EyelineDemo:
+    type: application
+    platform: iOS
+    sources: [EyelineDemo]
+    dependencies:
+      - package: EyelineKit
+        product: EyelineKit
+      - package: EyelineKit
+        product: EyelineKitVision
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.npwitk.EyelineDemo
+        SWIFT_VERSION: "6.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_NSCameraUsageDescription: "Eyeline Demo uses the front camera to run a sample face check."
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_CFBundleDisplayName: Eyeline Demo
+        LOCALIZATION_PREFERS_STRING_CATALOGS: YES

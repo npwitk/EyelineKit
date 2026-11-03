@@ -1,0 +1,352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		020887832B8D18E7B77E6CF4 /* EyelineKitVision in Frameworks */ = {isa = PBXBuildFile; productRef = 232E45F72CB9B7A22E4FBC28 /* EyelineKitVision */; };
+		420CF6B0DCD43B25D2E6AB0F /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78354557CA01D06012C80AC /* Brand.swift */; };
+		49D4293B553E2B72EB9340A4 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED425B8D89DCDDB13560C86 /* CheckView.swift */; };
+		91D6EC40D60034A1B2930EBC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46331A64AA99ED1B778ABB63 /* IntroView.swift */; };
+		9725B8FFB7F211A236485C1B /* EyelineDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD8FE768BCC994D941E62E /* EyelineDemoApp.swift */; };
+		D9232A09C663A28293D1C8F8 /* EyelineKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1155A5A57CFD6444E1F9CE7F /* EyelineKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1ED425B8D89DCDDB13560C86 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
+		39700F3E77F63C569EDCB783 /* EyelineDemo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EyelineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46331A64AA99ED1B778ABB63 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		49BD8FE768BCC994D941E62E /* EyelineDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyelineDemoApp.swift; sourceTree = "<group>"; };
+		C78354557CA01D06012C80AC /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		DF4CD13746A720B8595D67BA /* EyelineKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyelineKit; path = ..; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		623F1067D94D053F6711B22E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9232A09C663A28293D1C8F8 /* EyelineKit in Frameworks */,
+				020887832B8D18E7B77E6CF4 /* EyelineKitVision in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D6302CDCB95F1AECEC667DE = {
+			isa = PBXGroup;
+			children = (
+				D69FEDC50B5A0373D9EA282C /* EyelineDemo */,
+				7883D8CB1199E3379C217B7E /* Packages */,
+				7CFF80B2C36109E2CDBD361D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7883D8CB1199E3379C217B7E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				DF4CD13746A720B8595D67BA /* EyelineKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		7CFF80B2C36109E2CDBD361D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39700F3E77F63C569EDCB783 /* EyelineDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D69FEDC50B5A0373D9EA282C /* EyelineDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C78354557CA01D06012C80AC /* Brand.swift */,
+				1ED425B8D89DCDDB13560C86 /* CheckView.swift */,
+				49BD8FE768BCC994D941E62E /* EyelineDemoApp.swift */,
+				46331A64AA99ED1B778ABB63 /* IntroView.swift */,
+			);
+			path = EyelineDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B19F1630916B07E08A774CD8 /* EyelineDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B53DCAD9F78848F03085CEB6 /* Build configuration list for PBXNativeTarget "EyelineDemo" */;
+			buildPhases = (
+				60FA7B115DB7C9CF3AA4CE71 /* Sources */,
+				623F1067D94D053F6711B22E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EyelineDemo;
+			packageProductDependencies = (
+				1155A5A57CFD6444E1F9CE7F /* EyelineKit */,
+				232E45F72CB9B7A22E4FBC28 /* EyelineKitVision */,
+			);
+			productName = EyelineDemo;
+			productReference = 39700F3E77F63C569EDCB783 /* EyelineDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC0461F526B87D44EB048853 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 0AAF464BB123ADBBCF51200B /* Build configuration list for PBXProject "EyelineDemo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6D6302CDCB95F1AECEC667DE;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E607B73BB523879EBCC9F920 /* XCLocalSwiftPackageReference ".." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7CFF80B2C36109E2CDBD361D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B19F1630916B07E08A774CD8 /* EyelineDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60FA7B115DB7C9CF3AA4CE71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				420CF6B0DCD43B25D2E6AB0F /* Brand.swift in Sources */,
+				49D4293B553E2B72EB9340A4 /* CheckView.swift in Sources */,
+				9725B8FFB7F211A236485C1B /* EyelineDemoApp.swift in Sources */,
+				91D6EC40D60034A1B2930EBC /* IntroView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		25903A1A2D806776CF13F195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3CFFD58A75B64790ABA1298F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Eyeline Demo";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Eyeline Demo uses the front camera to run a sample face check.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.npwitk.EyelineDemo;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D7EA7E3BAF3D968AE689113 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		967D60AF1857E8543FB12610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Eyeline Demo";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Eyeline Demo uses the front camera to run a sample face check.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.npwitk.EyelineDemo;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AAF464BB123ADBBCF51200B /* Build configuration list for PBXProject "EyelineDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25903A1A2D806776CF13F195 /* Debug */,
+				7D7EA7E3BAF3D968AE689113 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B53DCAD9F78848F03085CEB6 /* Build configuration list for PBXNativeTarget "EyelineDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CFFD58A75B64790ABA1298F /* Debug */,
+				967D60AF1857E8543FB12610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E607B73BB523879EBCC9F920 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1155A5A57CFD6444E1F9CE7F /* EyelineKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EyelineKit;
+		};
+		232E45F72CB9B7A22E4FBC28 /* EyelineKitVision */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EyelineKitVision;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CC0461F526B87D44EB048853 /* Project object */;
+}
